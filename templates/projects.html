@@ -12,7 +12,7 @@
                 <h1>Projects</h1>
                 <a href="{% url 'main:create_project' %}" class="button project-add-button">
                     <span aria-hidden="true">+</span>
-                    Tambah Proyek
+                    Add Project
                 </a>
             </div>
 
@@ -20,10 +20,10 @@
                 <input type="search"
                        name="title"
                        value="{{ title_query }}"
-                       placeholder="Cari berdasarkan nama proyek"
+                       placeholder="Find using project name"
                        class="project-search__input"
-                       aria-label="Cari berdasarkan nama proyek">
-                <button type="submit" class="button">Cari</button>
+                       aria-label="Find using project name">
+                <button type="submit" class="button">Find</button>
             </form>
 
             <div class="experience-grid project-grid">
@@ -41,9 +41,9 @@
                     </article>
                 {% empty %}
                     {% if title_query %}
-                        <p class="empty-state">Tidak ada proyek dengan nama tersebut.</p>
+                        <p class="empty-state">No projects found with that name</p>
                     {% else %}
-                        <p class="empty-state">Belum ada proyek yang ditambahkan.</p>
+                        <p class="empty-state">No projects have been made yet</p>
                     {% endif %}
                 {% endfor %}
             </div>

@@ -790,3 +790,27 @@ h1, .brand {
         text-align: center;
     }
 }
+
+.form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.7rem;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    background: #fff;
+    font: inherit;
+}
+
+.form-group input[type="checkbox"] {
+    width: auto;
+}
+
+/* keep action buttons pinned to card bottom */
+.experience-grid .experience-card {
+    display: flex;
+    flex-direction: column;
+}
+.experience-grid .project-actions {
+    margin-top: auto;
+    padding-top: 1rem;
+}
