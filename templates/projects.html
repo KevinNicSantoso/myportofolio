@@ -10,10 +10,12 @@
 
             <div class="project-header">
                 <h1>Projects</h1>
+                {% if user.is_superuser %}
                 <a href="{% url 'main:create_project' %}" class="button project-add-button">
                     <span aria-hidden="true">+</span>
                     Add Project
                 </a>
+                {% endif %} 
             </div>
 
             <form method="get" action="{% url 'main:project_list' %}" class="project-search">
@@ -35,7 +37,10 @@
 
                         <div class="project-card-actions">
                             <div class="project-actions">
+                            {% if user.is_superuser %}
+                                {% include "components/project_star.html" with project=project %}
                                 {% include "components/project_delete_modal.html" with project=project %}
+                            {% endif %}
                             </div>
                         </div>
                     </article>
