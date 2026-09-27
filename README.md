@@ -27,3 +27,8 @@ Class : PBP KKI
 2. JSON is preferred because its structure is more lightweight and concise than XML (no verbose tags). Because of this, payloads are smaller, faster, and quicker to parse
 
 3. When a client requests a URL such as /experience/json/, Django's resolver routes it to the view (get_experience_json), which queries the ORM (Experience.objects.all()), passes the QuerySet through serializers.serialize("json", ...), and returns the resulting text in an HttpResponse with content_type="application/json"; the display view (show_experience) then fetches that JSON, rebuilds Python objects with serializers.deserialize(...), and hands them to the template for rendering. Serialization is necessary because HTTP responses can only carry plain text, while Django model instances are live Python objects bound to the ORM and database connection that cannot travel over the network or be understood by other languages in their raw form. 
+
+
+### Assignment 4
+
+During this assignment, I had faced a few challenges, mainly figuring out how to make a new group of users as it has not been taught in the tutorial (superusers/admins can be created in bash). Websites such as stack overflow helped tremendously in the process of making this assignment. Furthermore, I also used the help of generative AI to figure out what kind of permissions the editor group needs for their functions to work. However, I feel that the portofolio website that has been in the works for over 1 month now is growing steadily as more and more features have been added.

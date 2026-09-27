@@ -2,7 +2,7 @@ from django.urls import path
 
 from main.views import show_main, show_experience
 from main.views import project_list
-from main.views import create_project, get_projects_json, delete_project
+from main.views import create_project, get_projects_json, delete_project, update_project
 from main.views import get_experience_json, create_experience, update_experience, delete_experience
 from main.views import register, login_user, logout_user, toggle_star
 
@@ -15,6 +15,7 @@ urlpatterns = [
     path("projects/add/", create_project, name="create_project"),
     path("api/projects/", get_projects_json, name="get_projects_json"),
     path("projects/<int:project_id>/delete/", delete_project, name="delete_project"),
+    path("projects/update/<int:project_id>/", update_project, name="update_project"),
     path("experience/json/", get_experience_json, name="get_experience_json"),
     path("experience/create/", create_experience, name="create_experience"),
     path("experience/update/<int:experience_id>/", update_experience, name="update_experience"),
